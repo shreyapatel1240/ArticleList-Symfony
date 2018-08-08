@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2 class="page-header">Latest Articles</h2>
+    <table class="table table-striped"> 
+        <thead> 
+            <tr> 
+                <th>#</th> 
+                <th>Article</th> 
+                <th>Author</th>
+                <th></th>
+            </tr> 
+        </thead> 
+        <tbody> 
+            {% for article in articles %}
+                <tr> 
+                    <th scope="row">{{article.id}}</th> 
+                    <td>{{article.name}}</td> 
+                    <td>{{article.author}}</td>
+                    <td>
+                        <a href="/article/details/{{article.id}}" class="btn btn-success">View<a>
+                        <a href="/article/edit/{{article.id}}" class="btn btn-default">Edit<a>
+                        <a href="/article/delete/{{article.id}}" class="btn btn-danger">Delete<a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody> 
+    </table>
+{% endblock %}

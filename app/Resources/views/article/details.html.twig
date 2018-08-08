@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <a class="btn btn-default" href="/">Back to Articles</a>
+    <hr>
+    <h2 class="page-header">{{article.name}}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Author: {{article.author}}</li>
+        <li class="list-group-item">Created Date: <strong>{{article.createDate|date('F j, Y g:i a')}}</strong></li>
+    </ul>
+    <p>
+        {{article.content}}
+    </p>
+{% endblock %}
